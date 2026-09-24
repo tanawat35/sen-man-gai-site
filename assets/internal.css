@@ -1,0 +1,101 @@
+/* ============================================================
+   Internal docs — roadmap + business plan
+   Not linked from the public site nav. noindex on every page.
+   Reuses the public design tokens from styles.css.
+   ============================================================ */
+
+.internal-bar{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Bai Jamjuree',sans-serif;
+  font-size:13px;
+}
+.internal-bar .container{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding-block:10px;
+}
+.internal-bar a{ color:var(--yolk); font-weight:600; }
+.internal-bar a:hover{ text-decoration:underline; }
+.internal-bar .ib-label{
+  display:flex; align-items:center; gap:8px; color:rgba(246,239,223,.8);
+}
+.internal-bar .ib-dot{
+  width:7px; height:7px; border-radius:50%; background:var(--gold); flex:none;
+}
+
+/* ---------- sub nav between the plan's 5 docs ---------- */
+.subnav{
+  display:flex; flex-wrap:wrap; gap:8px;
+  padding-block:18px 0;
+}
+.subnav a{
+  font-family:'Bai Jamjuree',sans-serif; font-weight:600; font-size:13.5px;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--border); color:var(--text-muted);
+  background:var(--surface);
+  transition:border-color .15s,color .15s,background .15s;
+}
+.subnav a:hover{ border-color:var(--gold-dim); color:var(--gold); }
+.subnav a.is-current{
+  background:rgba(196,71,43,.1); border-color:var(--gold-dim); color:var(--gold);
+}
+
+/* ---------- generic long-form doc content ---------- */
+.doc{ max-width:74ch; }
+.doc h2{
+  font-size:1.5rem; margin:48px 0 14px; padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+}
+.doc h2:first-child{ margin-top:0; }
+.doc h3{ font-family:'Bai Jamjuree',sans-serif; font-weight:600; font-size:1.05rem; color:var(--gold); margin:28px 0 8px; }
+.doc h4{ font-family:'Bai Jamjuree',sans-serif; font-weight:600; font-size:1rem; margin:20px 0 6px; }
+.doc p{ margin:0 0 15px; color:var(--text); }
+.doc ul,.doc ol{ margin:0 0 16px; padding-left:22px; }
+.doc li{ margin-bottom:7px; color:var(--text); }
+.doc li > ul, .doc li > ol{ margin-top:7px; }
+.doc strong{ font-weight:700; color:var(--text); }
+.doc em{ color:var(--text-muted); }
+.doc hr{ border:none; border-top:1px solid var(--border); margin:40px 0; }
+.doc code{
+  background:var(--surface-2); border:1px solid var(--border-soft); border-radius:5px;
+  padding:1px 6px; font-size:13.5px; font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+.doc blockquote{
+  margin:0 0 24px; padding:16px 20px;
+  background:rgba(196,71,43,.06); border:1px solid var(--gold-dim); border-left:3px solid var(--gold);
+  border-radius:0 14px 14px 0; color:var(--text-muted); font-size:14.5px;
+}
+.doc blockquote p{ margin:0 0 8px; }
+.doc blockquote p:last-child{ margin:0; }
+
+.doc .table-wrap{ overflow-x:auto; margin:0 0 22px; border:1px solid var(--border-soft); border-radius:14px; }
+.doc table{ border-collapse:collapse; width:100%; font-size:13.5px; font-variant-numeric:tabular-nums; background:var(--surface); }
+.doc th{
+  text-align:left; font-family:'Bai Jamjuree',sans-serif; font-size:11.5px; letter-spacing:.05em;
+  font-weight:600; color:var(--text-muted); padding:10px 14px; border-bottom:1px solid var(--border);
+  background:var(--surface-2); white-space:nowrap;
+}
+.doc td{ padding:11px 14px; border-bottom:1px solid var(--border-soft); vertical-align:top; color:var(--text); }
+.doc tr:last-child td{ border-bottom:none; }
+.doc th[align="right"], .doc td[align="right"]{ text-align:right; }
+
+.doc-page{ padding-block:44px 96px; }
+.doc-lede{
+  color:var(--text-muted); font-size:1.02rem; max-width:64ch; margin:0 0 28px;
+  padding:16px 20px; background:var(--surface); border:1px solid var(--border-soft); border-radius:14px;
+}
+
+/* ---------- roadmap-specific: stage chips reuse .tag ---------- */
+.stage-chip{ font-size:11px; padding:2px 9px; margin-right:8px; vertical-align:middle; }
+
+/* ---------- doc index cards ---------- */
+.doc-index-card{
+  display:flex; flex-direction:column; gap:6px;
+}
+.doc-index-card .doc-num{
+  font-family:'Chonburi',serif; font-size:13px; color:var(--gold);
+}
+.doc-index-card h3{ font-family:'Chonburi',serif; font-weight:400; font-size:1.15rem; margin:0; color:var(--text); }
+.doc-index-card p{ color:var(--text-muted); font-size:14px; margin:0; }
+
+@media print{ .internal-bar, .subnav{ display:none; } }
